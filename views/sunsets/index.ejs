@@ -1,0 +1,39 @@
+<%- include ("../partials/header")%>
+
+<div class="container">
+	<header class="jumbotron">
+		<div class="container">
+			<h1>Welcome to Pet Advisor</h1>
+			<p>The perfect hotel for your Pet</p>
+
+			<p>
+				<a class="btn btn-primary" href="/sunsets/new">Add new Pet Hotel</a>
+			</p>
+		</div>
+	</header>
+	
+
+	<div class="row text-center" id="sunset-grid">
+		<% sunsets.forEach(function(sunset){ %>
+		<div class="col-lg-3 col-md-4 col-sm-6 mb-4 ">
+	
+			<div class="card h-100">
+				<img class="card-img-top " id="show-all" src=" <%= sunset.image %>">
+				<div class="card-body">
+					<h5 class="card-title"><%= sunset.name %></h5>
+				</div>
+				<p>
+					<a href="/sunsets/<%=sunset.id%>" class="btn btn-primary"> More Info</a>
+				</p>
+			</div>
+		</div>
+
+		<% }); %>
+	</div>
+
+
+
+</div>
+
+
+<%- include ("../partials/footer")%>
